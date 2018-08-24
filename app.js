@@ -8,3 +8,9 @@ GAME RULES:
 - The first player to reach 100 points on GLOBAL score wins the game
 
 */
+/* Maintain Score between two players so one array of two values  */
+var scores = [0,0];
+
+/* Round Score Starts as 0 , while Active Player stays 0 until 1 for their turn */
+
+var roundScore,activePlayer = 0;
