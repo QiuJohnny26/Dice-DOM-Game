@@ -9,19 +9,43 @@ GAME RULES:
 
 */
 /* Maintain Score between two players so one array of two values  */
-var dice,scores,roundScore,activePlayer;
+var scores,roundScore,activePlayer;
 scores = [0,0];
 /* Round Score Starts as 0 , while Active Player stays 0 until 1 for their turn */
 roundScore = 0;
 activePlayer = 1;
 
-dice = Math.floor(Math.random() * 6)+1;
-console.log(dice);
+//dice = Math.floor(Math.random() * 6)+1;
+//console.log(dice);
 
+document.getElementById('score-0').textContent = '0';
+document.getElementById('score-1').textContent = '0';
+document.getElementById('current-0').textContent = '0';
+document.getElementById('current-1').textContent = '0';
 
-document.querySelector('#current-' + activePlayer).innerHTML = '<em>' + dice + '<em';
+//document.querySelector('#current-' + activePlayer).innerHTML = '<em>' + dice + '<em';
 
 document.querySelector('.dice').style.display = 'none';
+
+ function btn(){
+     
+ }
+
+document.querySelector('.btn-roll').addEventListener('click',function(){
+  // 1.Random Number
+    var dice = Math.floor(Math.random() * 6)+1;
+ // 2.Display the result
+    var diceDOM = document.querySelector('.dice');
+    diceDOM.style.display = 'block';
+    diceDOM.src = 'dice-' + dice + '.png';
+
+     
+ //3. Update the round score if the rolled number was Not a 1
+    
+    
+})
+    
+
 
     
 
