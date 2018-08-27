@@ -9,8 +9,19 @@ GAME RULES:
 
 */
 /* Maintain Score between two players so one array of two values  */
-var scores = [0,0];
-
+var dice,scores,roundScore,activePlayer;
+scores = [0,0];
 /* Round Score Starts as 0 , while Active Player stays 0 until 1 for their turn */
+roundScore = 0;
+activePlayer = 0;
 
-var roundScore,activePlayer = 0;
+dice = Math.floor(Math.random() * 6)+1;
+console.log(dice);
+
+document.querySelector('#current-0').textContent = dice;
+
+    
+
+
+
+/* calculate random number */
