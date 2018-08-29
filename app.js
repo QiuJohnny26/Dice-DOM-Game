@@ -43,21 +43,12 @@ document.querySelector('.btn-roll').addEventListener('click',function(){
  //3. Update the round score if the rolled number was Not a 1
     if ( dice !== 1 ){
        
-        roundScore += dice;
-        document.querySelector('#current-' + activePlayer).textContent = roundScore;
+             roundScore += dice;
+             document.querySelector('#current-' + activePlayer).textContent = roundScore;
     }
     else {
       
-        activePlayer === 0 ? activePlayer = 1 : activePlayer = 0;
-        roundScore = 0;
-        
-        document.getElementById('current-1').textContent = '0';
-        document.getElementById('current-0').textContent = '0';
-        
-        document.querySelector('.player-1-panel').classList.toggle('active');
-        document.querySelector('.player-0-panel').classList.toggle('active');
-      
-        document.querySelector('.dice').style.display = 'none'; 
+             nextPlayer();
     }
     });
      
@@ -68,14 +59,27 @@ document.querySelector('.btn-roll').addEventListener('click',function(){
          // Update The UI
             document.querySelector('#score-' + activePlayer).textContent = scores[activePlayer];
          // Check if Player won the Game
-         
+            nextPlayer();
      });
+
         
     
 
     
 
-
+function nextPlayer(){
+       
+        activePlayer === 0 ? activePlayer = 1 : activePlayer = 0;
+        roundScore = 0;
+        
+        document.getElementById('current-1').textContent = '0';
+        document.getElementById('current-0').textContent = '0';
+        
+        document.querySelector('.player-1-panel').classList.toggle('active');
+        document.querySelector('.player-0-panel').classList.toggle('active');
+      
+        document.querySelector('.dice').style.display = 'none'; 
+}
     
 
 
