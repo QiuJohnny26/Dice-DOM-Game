@@ -45,7 +45,6 @@ document.querySelector('.btn-roll').addEventListener('click',function(){
        
         roundScore += dice;
         document.querySelector('#current-' + activePlayer).textContent = roundScore;
-
     }
     else {
       
@@ -60,8 +59,20 @@ document.querySelector('.btn-roll').addEventListener('click',function(){
       
         document.querySelector('.dice').style.display = 'none'; 
     }
+    });
+     
+     document.querySelector('.btn-hold').addEventListener('click',function(){
+         
+         // Add Score to Current Score
+            scores[activePlayer] += roundScore;
+         // Update The UI
+            document.querySelector('#score-' + activePlayer).textContent = scores[activePlayer];
+         // Check if Player won the Game
+         
+     });
+        
     
-})
+
     
 
 
