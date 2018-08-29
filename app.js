@@ -60,6 +60,7 @@ document.querySelector('.btn-roll').addEventListener('click',function(){
             document.querySelector('#score-' + activePlayer).textContent = scores[activePlayer];
          // Check if Player won the Game
             nextPlayer();
+            checkWin();
      });
 
         
@@ -79,6 +80,16 @@ function nextPlayer(){
         document.querySelector('.player-0-panel').classList.toggle('active');
       
         document.querySelector('.dice').style.display = 'none'; 
+}
+
+function checkWin(){
+    
+       if(scores[activePlayer] >= 20 ) {
+           
+        document.querySelector('#name-' + activePlayer).textContent = ' Winner ';
+           
+       }   
+     
 }
     
 
