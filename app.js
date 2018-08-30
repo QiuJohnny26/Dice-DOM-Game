@@ -121,8 +121,8 @@ function init(){
 
 //document.querySelector('#current-' + activePlayer).innerHTML = '<em>' + dice + '<em';
     document.querySelector('.dice').style.display = 'none';
-    document.querySelector('#name-' + 0).textContent = ' Player-1';
-    document.querySelector('#name-' +1).textContent = ' Player-2 ';
+    document.getElementById('#name-' + 0).textContent = ' Player-1';
+    document.getElementById('#name-' +1).textContent = ' Player-2 ';
 
 }
     
