@@ -15,11 +15,6 @@ init();
 
 //document.querySelector('#current-' + activePlayer).innerHTML = '<em>' + dice + '<em';
 
-document.querySelector('.dice').style.display = 'none';
-
- function btn(){
-     
- }
 
 document.querySelector('.btn-roll').addEventListener('click',function(){
   // 1.Random Number
@@ -82,7 +77,7 @@ function checkWin(){
         document.querySelector('#name-' + activePlayer).textContent = ' Winner ';
         document.querySelector('.dice').style.display = 'none';
         document.querySelector('.player-' + activePlayer + '-panel').classList.add('winner');
-        document.querySelector('.player-' + activePlayer + '-panel').classList.remove('active');
+       // document.querySelector('.player-' + activePlayer + '-panel').classList.remove('active');
 
            
        }
@@ -99,10 +94,9 @@ function init(){
 /* Round Score Starts as 0 , while Active Player stays 0 until 1 for their turn */
     roundScore = 0;
     var starter= Math.floor(Math.random() * 1) + 0;
-    console.log(starter);
     activePlayer = starter;
    
-     if(activePlayer == 0){
+ if(activePlayer == 0){
          
       document.querySelector('.player-1-panel').classList.toggle('active');
 
@@ -111,6 +105,7 @@ function init(){
       document.querySelector('.player-0-panel').classList.toggle('active');
     }
     
+
 //dice = Math.floor(Math.random() * 6)+1;
 //console.log(dice);
 
@@ -121,9 +116,14 @@ function init(){
 
 //document.querySelector('#current-' + activePlayer).innerHTML = '<em>' + dice + '<em';
     document.querySelector('.dice').style.display = 'none';
-    document.getElementById('#name-' + 0).textContent = ' Player-1';
-    document.getElementById('#name-' +1).textContent = ' Player-2 ';
+    document.getElementById('name-' + 0).textContent = 'Player-1';
+    document.getElementById('name-' + 1).textContent = 'Player-2 ';
+    document.querySelector('.player-1'  + '-panel').classList.remove('winner');
+    document.querySelector('.player-0'  + '-panel').classList.remove('winner');  
+   
 
+    
+   
 }
     
 
