@@ -10,18 +10,8 @@ GAME RULES:
 */
 /* Maintain Score between two players so one array of two values  */
 var scores,roundScore,activePlayer;
-scores = [0,0];
-/* Round Score Starts as 0 , while Active Player stays 0 until 1 for their turn */
-roundScore = 0;
-activePlayer = 1;
 
-//dice = Math.floor(Math.random() * 6)+1;
-//console.log(dice);
-
-document.getElementById('score-0').textContent = '0';
-document.getElementById('score-1').textContent = '0';
-document.getElementById('current-0').textContent = '0';
-document.getElementById('current-1').textContent = '0';
+init();
 
 //document.querySelector('#current-' + activePlayer).innerHTML = '<em>' + dice + '<em';
 
@@ -66,22 +56,8 @@ document.querySelector('.btn-roll').addEventListener('click',function(){
 
  
         
-document.querySelector('.btn-new').addEventListener('click',function(){
+document.querySelector('.btn-new').addEventListener('click',init);
        
-          scores = [0,0];
-          roundScore = 0;
-          activePlayer = 1;
-
-
-          document.getElementById('score-0').textContent = '0';
-          document.getElementById('score-1').textContent = '0';
-          document.getElementById('current-0').textContent = '0';
-          document.getElementById('current-1').textContent = '0';
-    
-      
-      
-});
-    
 
     
 
@@ -116,6 +92,29 @@ function checkWin(){
      }
        
      
+}
+
+function init(){
+    scores = [0,0];
+/* Round Score Starts as 0 , while Active Player stays 0 until 1 for their turn */
+    roundScore = 0;
+    var starter= Math.floor(Math.random() * 1) + 0;
+    console.log(starter);
+    activePlayer = starter;
+
+//dice = Math.floor(Math.random() * 6)+1;
+//console.log(dice);
+
+    document.getElementById('score-0').textContent = '0';
+    document.getElementById('score-1').textContent = '0';
+    document.getElementById('current-0').textContent = '0';
+    document.getElementById('current-1').textContent = '0';
+
+//document.querySelector('#current-' + activePlayer).innerHTML = '<em>' + dice + '<em';
+    document.querySelector('.dice').style.display = 'none';
+    document.querySelector('#name-' + 0).textContent = ' Player-1';
+    document.querySelector('#name-' +1).textContent = ' Player-2 ';
+
 }
     
 
