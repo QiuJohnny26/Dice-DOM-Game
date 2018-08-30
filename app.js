@@ -101,7 +101,16 @@ function init(){
     var starter= Math.floor(Math.random() * 1) + 0;
     console.log(starter);
     activePlayer = starter;
+   
+     if(activePlayer == 0){
+         
+      document.querySelector('.player-1-panel').classList.toggle('active');
 
+     }
+    else {
+      document.querySelector('.player-0-panel').classList.toggle('active');
+    }
+    
 //dice = Math.floor(Math.random() * 6)+1;
 //console.log(dice);
 
