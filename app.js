@@ -35,13 +35,15 @@ document.querySelector('.btn-roll').addEventListener('click',function(){
              roundScore += dice;
              document.querySelector('#current-' + activePlayer).textContent = roundScore;
              console.log(dice);
+
+// New Rule if the User rolls two 6 in a row next player goes 
           if(prevRoll == dice){
                nextPlayer();
                dice = 0;
               }  
              prevRoll = dice;
               
-    } 
+      } 
         
 
     else {
