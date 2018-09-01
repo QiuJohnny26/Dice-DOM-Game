@@ -9,7 +9,7 @@ GAME RULES:
 
 */
 /* Maintain Score between two players so one array of two values  */
-var scores,roundScore,activePlayer,gamePlaying;
+var scores,roundScore,activePlayer,gamePlaying,prevRoll;
 
 
 init();
@@ -21,8 +21,9 @@ document.querySelector('.btn-roll').addEventListener('click',function(){
   // 1.Random Number
     
      if(gamePlaying){
-     var dice = Math.floor(Math.random() * 6)+1;
-    console.log(dice);
+     //var dice = Math.floor(Math.random() * 6)+1;
+     var dice = 6;
+
  // 2.Display the result
       diceDOM = document.querySelector('.dice');
       diceDOM.style.display = 'block';
@@ -31,10 +32,18 @@ document.querySelector('.btn-roll').addEventListener('click',function(){
      
  //3. Update the round score if the rolled number was Not a 1
     if ( dice !== 1 ){
-       
              roundScore += dice;
              document.querySelector('#current-' + activePlayer).textContent = roundScore;
-    }
+             console.log(dice);
+          if(prevRoll == dice){
+               nextPlayer();
+               dice = 0;
+              }  
+             prevRoll = dice;
+              
+    } 
+        
+
     else {
       
              nextPlayer();
