@@ -9,7 +9,7 @@ GAME RULES:
 
 */
 /* Maintain Score between two players so one array of two values  */
-var scores,roundScore,activePlayer,gamePlaying,prevRoll;
+var scores,roundScore,activePlayer,gamePlaying,prevRoll,input;
 
 
 init();
@@ -58,7 +58,15 @@ document.querySelector('.btn-roll').addEventListener('click',function(){
          // Add Score to Current Score
             scores[activePlayer] += roundScore;
          // Update The UI
+            
             document.querySelector('#score-' + activePlayer).textContent = scores[activePlayer];
+              input = document.querySelector('.final-score').value;
+              if (input){
+                  var winningScore=input;
+              } 
+             else{
+                 winningScore = 100;
+             }
          // Check if Player won the Game
             checkWin();
          }
@@ -88,8 +96,8 @@ function nextPlayer(){
 }
 
 function checkWin(){
-    
-       if(scores[activePlayer] >= 20) {
+        
+       if(scores[activePlayer] >= input) {
         
         document.querySelector('#name-' + activePlayer).textContent = ' Winner ';
         document.querySelector('.dice').style.display = 'none';
@@ -115,7 +123,7 @@ function init(){
     //activePlayer = 0;
     var randomNum = Math.floor(Math.random() * 1 ) + 0;
     activePlayer=randomNum;
-   
+    
     
 
 
