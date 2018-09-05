@@ -1,6 +1,5 @@
 # JavaScript-Project
 
-/*
 GAME RULES:</br>
 
 - The game has 2 players, playing in rounds</br>
@@ -8,7 +7,7 @@ GAME RULES:</br>
 - BUT, if the player rolls a 1, all his ROUND score gets lost. After that, it's the next player's turn</br>
 - The player can choose to 'Hold', which means that his ROUND score gets added to his GLBAL score. After that, it's the next player's turn</br>
 - The first player to reach 100 points on GLOBAL score wins the game</br>
-*/
+
 
 This project is mainly to further my skills with javascript and learn various concepts ranging from DOM manipulation, Event Handling,DRY principle, and more.</br>
 
